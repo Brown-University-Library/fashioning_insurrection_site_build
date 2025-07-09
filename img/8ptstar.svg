@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" >
+<path d="
+  M200 0
+  Q80 200 200 400
+  Q320 200 200 0
+  M0 200
+  Q200 320 400 200
+  Q200 80 0 200
+" fill-rule="nonzero"/>
+<path d="
+  M200 0
+  Q80 200 200 400
+  Q320 200 200 0
+  M0 200
+  Q200 320 400 200
+  Q200 80 0 200
+" fill-rule="nonzero" transform-box="border-box" transform-origin="center" transform="rotate(45)"/>
+</svg>

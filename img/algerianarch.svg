@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="1000" viewBox="0 0 200 1000">
+<path d="
+  M-50 -50
+  h400
+  v1500
+  H190
+  V104
+  l-5 -5
+  q30 -60 -85 -90
+  q-110 20 -85 90
+  l-5 5
+  V1500
+  H-200
+  z
+"/>
+</svg>

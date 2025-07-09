@@ -1,0 +1,12 @@
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 999">
+    <path d="
+      M-50 -50
+      H250
+      V2000
+      H190
+      V100
+      q0 -90 -90 -90
+      t-90 90
+      V2000
+      H-50
+      z"/></svg>

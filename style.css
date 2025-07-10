@@ -12,11 +12,11 @@ body {
     --headerfonts:Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
     --archcolor:black;
     --greekcolor:66, 83, 113;
-    --dkgreekcolor:66, 83, 113;
+    --dkgreekcolor:32, 44, 65;
     --algeriancolor:135, 133, 129;
-    --dkalgeriancolor:135, 133, 129;
+    --dkalgeriancolor:73,67,55;
     --indiancolor:125, 50, 35;
-    --dkindiancolor:125, 50, 35;
+    --dkindiancolor:69, 34, 20;
     --darkerblue:#072441;
     --lighterseablue:#287ab1;
     --red:#d12229;
@@ -33,6 +33,7 @@ body {
 a {
     color: var(--linkcolor);
     text-decoration-thickness: 0.045em;
+    pointer-events: all;
 }
 
 .topnavbar {
@@ -67,7 +68,7 @@ header , footer {
     width:100vw;
 }
 
-#about, #americans {
+#about, #americans, #zoom {
     visibility: hidden;
     position:fixed;
     inset:0;
@@ -160,10 +161,6 @@ footer {
     background:black;
 }
 
-main {
-    flex:1;
-}
-
 @media (width <= 1000px) {
     main.home>nav {
         &>ul>li {
@@ -248,31 +245,23 @@ main.home>nav {
                 font-size:0.5em;
             }
         }
-            &:focus-visible>span {
-                text-decoration:underline;
-            }
-            &>.archbox {
-                position: absolute;
-                inset:0;
-                background-color:black;
-                background-position-x: center;
-                background-position-y:-1px;
-                background-repeat: no-repeat;
-                background-size: cover;
-                -webkit-mask-size: cover;
-                mask-size: cover;
-                pointer-events:none;
-            }
-        &:nth-child(1)>ul {
-            background:var(--archcolor);
+        &:focus-visible>span {
+            text-decoration:underline;
         }
-        &:nth-child(2)>ul {
-            background:var(--archcolor);
-        }
-        &:nth-child(3)>ul {
-            background:var(--archcolor);
+        &>.archbox {
+            position: absolute;
+            inset:0;
+            background-color:black;
+            background-position-x: center;
+            background-position-y:-1px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            pointer-events:none;
         }
         &>ul {
+            background:var(--archcolor);
             visibility: hidden;
             display: block;
             max-height: 0px;
@@ -281,6 +270,7 @@ main.home>nav {
             width:100%;
             text-align:center;
             list-style:none;
+            transition: all 0.5s;
             &>li {
                 max-height:0px;
                 opacity:0;
@@ -294,7 +284,6 @@ main.home>nav {
                     }
                 }
             }
-            transition: all 0.5s;
         }
         &:hover > ul, &:focus-within > ul {
             visibility:initial;
@@ -374,10 +363,27 @@ main.home>nav {
     }
 }
 
-main.case {
+main {
     display: flex;
     flex-direction:row;
-    flex-wrap:wrap;
+    flex: 1;
+}
+
+section#case {
+    padding:1em;
+    flex:3;
+    display: flex;
+    flex-flow: row wrap;
+    & a {
+        flex:330px;
+        height: 450px;
+    }
+    & img {
+        object-fit:cover;
+        width: 100%;
+        height:100%;
+        padding: 0.5em;
+    }
     & h2 {
         position:sticky;
         display:block;
@@ -392,21 +398,19 @@ main.case {
         padding-inline: 1em;
         padding-block:1em;
     }
-    & section {
-        padding:1em;
-        flex:3;
-        display: flex;
-        flex-flow: row wrap;
-        & a {
-            flex:330px;
-            height: 450px;
-        }
-        & img {
-            object-fit:cover;
-            width: 100%;
-            height:100%;
-            padding: 0.5em;
-        }
+}
+
+section#item {
+    padding:1em;
+    display: flex;
+    flex-flow: column;
+    flex:1;
+    &#itemdescription>a {
+        margin-block-end:1em;
+        display:block;
+    }
+    & h1,h2,h3 {
+        margin-block-end: 0.5em;
     }
 }
 
@@ -431,15 +435,38 @@ main.case {
                 padding-block: 1em;
                 position:relative;
                 &:before {
-                    content:"";
+                    content:"\2BC8";
                     position:absolute;
-                    inset:0.8em;
-                    bottom:0;
-                    border-bottom:var(--navborder);
+                    right:1em;
+                    transform:translateY(-2px);
+                    transition: all 0.2s;
                 }
             }
             & ul {
-                padding-block:0.6em;
+                pointer-events:none;
+                visibility:hidden;
+                overflow:hidden;
+                max-height:0;
+                transition: all 0.5s;
+                position: relative;
+                &:before {
+                    content:"";
+                    position:absolute;
+                    inset:0.8em;
+                    top:0;
+                    border-top:var(--navborder);
+                }
+            }
+            &.open,&:has(:focus-visible) {
+                &>div:before {
+                    rotate:90deg;
+                }
+                &>ul{
+                    max-height:400px;
+                    visibility:visible;
+                    padding-block:0.6em;
+                    transition: all 0.2s;
+                }
             }
         }
     }
@@ -462,24 +489,6 @@ main.case {
     left:0;
 }
 
-main.item {
-    display: flex;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    padding: 2em;
-    & section {
-        &#itemdescription>a {
-            margin-block-end:1em;
-            display:block;
-        }
-        height: min-content;
-        max-width:33%;
-        & h1,h2,h3 {
-            margin-block-end: 0.5em;
-        }
-    }
-}
-
 .imgwrapper {
     flex: 1;
     margin-inline-start:1em;
@@ -489,6 +498,7 @@ main.item {
         max-height:100%;
         position:absolute;
         object-fit:contain;
+        padding-block-end:1em;
     }
 }
 

@@ -80,14 +80,13 @@
 <div class="border"></div>
 </header>
 
-      <main class="case">
-            <nav class="leftnav">
+      <main>        <nav class="leftnav">
             <ul class="sticky">
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--greekcolor))">Greek War of Independence</div>
+                    <div style="background-color:rgb(var(--greekcolor))" tabindex=0>Greek War of Independence</div>
                     <ul style="background-color:rgb(var(--greekcolor))">
                         
                         
@@ -96,17 +95,17 @@
                         </li>
                         
                         
-                        <li style="background-color:rgb(var(--greekcolor))">
-                            <a href="/fi_test/greece/philhellenism/" class="active">Philhellenism: Americans in Support of the Greek Revolution and in Greek Costume</a>
+                        <li>
+                            <a href="/fi_test/greece/philhellenism/">Philhellenism: Americans in Support of the Greek Revolution and in Greek Costume</a>
                         </li>
                         
                     </ul>
                 </li>
                 
-                <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--algeriancolor))">Algerian Revolution</div>
+                
+                
+                <li class="open">
+                    <div style="background-color:rgb(var(--algeriancolor))" tabindex=0>Algerian Revolution</div>
                     <ul style="background-color:rgb(var(--algeriancolor))">
                         
                         
@@ -120,17 +119,17 @@
                         </li>
                         
                         
-                        <li>
-                            <a href="/fi_test/algeria/orientalist-legacies/">Orientalist Legacies of Algeria in the American Civil War</a>
+                        <li style="background-color:rgb(var(--dkalgeriancolor))">
+                            <a href="/fi_test/algeria/orientalist-legacies/" class="active">Orientalist Legacies of Algeria in the American Civil War</a>
                         </li>
                         
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--indiancolor))">Indian Rebellion of 1857</div>
+                    <div style="background-color:rgb(var(--indiancolor))" tabindex=0>Indian Rebellion of 1857</div>
                     <ul style="background-color:rgb(var(--indiancolor))">
                         
                         
@@ -148,39 +147,50 @@
                 
             </ul>
         </nav>
-
-    <section>
-        <h2>Philhellenism: Americans in Support of the Greek Revolution and in Greek Costume</h2>
+        <script>
+            navheaders = document.querySelectorAll(".leftnav>ul>li>div")
+            for (var i=0;i<navheaders.length;i++) {
+              navheaders[i].addEventListener("click", e => {
+                  lmnt = e.target;
+                  navsections = lmnt.parentElement.parentElement.children;
+                  for (var i=0;i<navsections.length;i++) {
+                    navsections[i].classList.remove("open");
+                  }
+                  lmnt.parentElement.classList.add("open");
+              });
+            }
+        </script>
+<section id="case" style="background-color:rgb(var(--dkalgeriancolor));">
+        <h2 style="background-color:rgb(var(--dkalgeriancolor));">Orientalist Legacies of Algeria in the American Civil War</h2>
         <div id="casedescription">
             <p>
-                <p>Costume permeated the international discourse
-regarding the Greek War of Independence, particularly
-in America. Although the U.S. government refused to
-become directly involved in the Greek struggle,
-Americans volunteered to fight alongside Greek rebels.
-Those supporters who remained at home took it upon
-themselves to raise funds and awareness about the
-revolution. The most memorable way they found to
-embody their solidarity was to wear Greek folk dress
-for portraits and costume balls. National garb also
-marked one way that the new Bavarian ruler of Greece
-unsuccessfully attempted to relate to his new
-subjects. Greek costumes also became distinguishing
-elements in the polarizing satirical cartoons and
-propaganda that circulated through regions and states
-during the conflict.</p>
+                <p>Approximately 30,000 soldiers fought as Zouaves in the
+American Civil War, primarily a part of volunteer
+militia units rather than professional battalions.
+Much like the French, Americans praised Zouave
+uniforms for their practicality, which freed soldiers
+from the restrictions of traditional infantry attire
+and gave them greater mobility. This transatlantic
+adaptation transformed a fighting force created from
+the subjugation of North Africa into a new image of
+alterity, which appealed to the expansionist United
+States, defined by racial politics of slavery. Much
+like their European counterparts, popular theatrical
+incarnations of this costume, known as zouaverie, also
+emerged across the U.S. Some Americans, however, did
+not forget the Zouave origins in the French conquest
+of Algeria. By the early post-war era, Black militia
+companies embraced the Zouave uniform as an emblem of
+an African military tradition. The Hannibal Zouaves,
+founded in Chicago in 1868, adopted this attire to
+assert an African martial lineage in public enactments
+of Black citizenship.</p>
 
             </p>
         </div>
-            <a href="/fi_test/items/demo_002.html"><img src="/fi_test/objects/small/demo_002_sm.jpg" alt="historic colorized postcard depicting a formal building with a large central tower in the French Renaissance revival style"></a>
+            <a href="/fi_test/items/demo_006.html"><img src="https://www.lib.uidaho.edu/collectionbuilder/demo-objects/small/demo_006_sm.jpg" alt="man standing with pump machinery next to a river with trees and mountains in the distance"></a>
         
-            <a href="/fi_test/items/foo_006.html"><img src="https://img.youtube.com/vi/CVXQ3X6Q8oU/hqdefault.jpg" alt="grainy image from historic film depicting fans heading to football game"></a>
-        
-            <a href="/fi_test/items/foo_007.html"><img src="https://www.lib.uidaho.edu/collectionbuilder/demo-objects/small/demo_006_sm.jpg" alt="man standing with pump machinery next to a river with trees and mountains in the distance"></a>
-        
-            <a href="/fi_test/items/foo_018.html"><img src="https://img.youtube.com/vi/CVXQ3X6Q8oU/hqdefault.jpg" alt="grainy image from historic film depicting fans heading to football game"></a>
-        
-            <a href="/fi_test/items/foo_019.html"><img src="https://www.lib.uidaho.edu/collectionbuilder/demo-objects/small/demo_006_sm.jpg" alt="man standing with pump machinery next to a river with trees and mountains in the distance"></a>
+            <a href="/fi_test/items/foo_012.html"><img src="https://www.lib.uidaho.edu/collectionbuilder/demo-objects/small/demo_006_sm.jpg" alt="man standing with pump machinery next to a river with trees and mountains in the distance"></a>
         
         </section>
     </main>

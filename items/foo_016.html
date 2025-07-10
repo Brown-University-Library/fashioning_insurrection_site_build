@@ -80,15 +80,14 @@
 <div class="border"></div>
 </header>
 
-      <main class="item">
-        <section id="itemdescription">
-                    <nav class="leftnav">
+      <main>
+                <nav class="leftnav">
             <ul class="sticky">
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--greekcolor))">Greek War of Independence</div>
+                    <div style="background-color:rgb(var(--greekcolor))" tabindex=0>Greek War of Independence</div>
                     <ul style="background-color:rgb(var(--greekcolor))">
                         
                         
@@ -104,10 +103,10 @@
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--algeriancolor))">Algerian Revolution</div>
+                    <div style="background-color:rgb(var(--algeriancolor))" tabindex=0>Algerian Revolution</div>
                     <ul style="background-color:rgb(var(--algeriancolor))">
                         
                         
@@ -128,10 +127,10 @@
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--indiancolor))">Indian Rebellion of 1857</div>
+                    <div style="background-color:rgb(var(--indiancolor))" tabindex=0>Indian Rebellion of 1857</div>
                     <ul style="background-color:rgb(var(--indiancolor))">
                         
                         
@@ -149,15 +148,31 @@
                 
             </ul>
         </nav>
+        <script>
+            navheaders = document.querySelectorAll(".leftnav>ul>li>div")
+            for (var i=0;i<navheaders.length;i++) {
+              navheaders[i].addEventListener("click", e => {
+                  lmnt = e.target;
+                  navsections = lmnt.parentElement.parentElement.children;
+                  for (var i=0;i<navsections.length;i++) {
+                    navsections[i].classList.remove("open");
+                  }
+                  lmnt.parentElement.classList.add("open");
+              });
+            }
+        </script>
 
+        <section id="item">
+            <a href="#zoom" class="imgwrapper">
+                <img src="https://img.youtube.com/vi/CVXQ3X6Q8oU/hqdefault.jpg" alt="grainy image from historic film depicting fans heading to football game" class="img-fluid">
+            </a>
             <h2>University of Idaho vs. University of Southern California (Football), 10/30/1925</h2>
             <p>
                 Example YouTube video item. Idaho Football vs. University of Southern California 10/30/1925 at Neale Stadium in Moscow, ID. Score: 7 - 51 (L).
             </p>
+            <div id="zoom" class="modal">
+                <img src="https://img.youtube.com/vi/CVXQ3X6Q8oU/hqdefault.jpg" alt="grainy image from historic film depicting fans heading to football game" />
         </section>
-        <div class="imgwrapper">
-            <img src="https://img.youtube.com/vi/CVXQ3X6Q8oU/hqdefault.jpg" alt="grainy image from historic film depicting fans heading to football game" class="img-fluid">
-        </div>
     </main>
 
     <footer>

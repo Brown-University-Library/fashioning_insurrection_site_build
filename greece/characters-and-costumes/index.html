@@ -80,19 +80,18 @@
 <div class="border"></div>
 </header>
 
-      <main class="case">
-            <nav class="leftnav">
+      <main>        <nav class="leftnav">
             <ul class="sticky">
                 
-                <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--greekcolor))">Greek War of Independence</div>
+                
+                
+                <li class="open">
+                    <div style="background-color:rgb(var(--greekcolor))" tabindex=0>Greek War of Independence</div>
                     <ul style="background-color:rgb(var(--greekcolor))">
                         
                         
-                        <li>
-                            <a href="/fi_test/greece/characters-and-costumes/">Navigating Characters and Costumes of the Greek War of Independence</a>
+                        <li style="background-color:rgb(var(--dkgreekcolor))">
+                            <a href="/fi_test/greece/characters-and-costumes/" class="active">Navigating Characters and Costumes of the Greek War of Independence</a>
                         </li>
                         
                         
@@ -103,10 +102,10 @@
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--algeriancolor))">Algerian Revolution</div>
+                    <div style="background-color:rgb(var(--algeriancolor))" tabindex=0>Algerian Revolution</div>
                     <ul style="background-color:rgb(var(--algeriancolor))">
                         
                         
@@ -127,10 +126,10 @@
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--indiancolor))">Indian Rebellion of 1857</div>
+                    <div style="background-color:rgb(var(--indiancolor))" tabindex=0>Indian Rebellion of 1857</div>
                     <ul style="background-color:rgb(var(--indiancolor))">
                         
                         
@@ -139,8 +138,8 @@
                         </li>
                         
                         
-                        <li style="background-color:rgb(var(--indiancolor))">
-                            <a href="/fi_test/india/press-and-popular-sentiment/" class="active">1857 Uprising in Press and Popular Sentiment</a>
+                        <li>
+                            <a href="/fi_test/india/press-and-popular-sentiment/">1857 Uprising in Press and Popular Sentiment</a>
                         </li>
                         
                     </ul>
@@ -148,44 +147,55 @@
                 
             </ul>
         </nav>
-
-    <section>
-        <h2>1857 Uprising in Press and Popular Sentiment</h2>
+        <script>
+            navheaders = document.querySelectorAll(".leftnav>ul>li>div")
+            for (var i=0;i<navheaders.length;i++) {
+              navheaders[i].addEventListener("click", e => {
+                  lmnt = e.target;
+                  navsections = lmnt.parentElement.parentElement.children;
+                  for (var i=0;i<navsections.length;i++) {
+                    navsections[i].classList.remove("open");
+                  }
+                  lmnt.parentElement.classList.add("open");
+              });
+            }
+        </script>
+<section id="case" style="background-color:rgb(var(--dkgreekcolor));">
+        <h2 style="background-color:rgb(var(--dkgreekcolor));">Navigating Characters and Costumes of the Greek War of Independence</h2>
         <div id="casedescription">
             <p>
-                <p>The British East India Company (BEIC) overwhelmingly
-recruited sepoys from northern India, followed by
-Madras and Bombay. Particularly in Bengal, British
-service had become a respected and privileged
-hereditary occupation. Yet that dynamic buckled as the
-British imposed new conditions, such as demands for
-overseas service and slower promotions, to name a few.
-Varied issues compounded with grievances, including a
-ban on caste markings and distinctions, as well as the
-issuance of cartridges reportedly greased with pig and
-cow fat that had to be opened with one’s teeth, an
-affront to Muslims and Hindus. Offenses of Indian
-values across socio-religious demographics helped
-galvanize the sepoy resistance as the BEIC lost the
-confidence of the Indian army that it had built. Rebel
-sepoys challenged British forces to restore the Mughal
-Empire under Bahadur Shah II (r. 1837–57) and to
-extend his rule throughout India. Americans, observing
-these events during their travels or from home,
-offered mixed responses. Some deplored the racial
-inequities of the BEIC, while others demonstrated
-growing sympathy for the British as they quelled
-uprisings that pitched Indians against their brethren,
-mirroring the growing dynamics in the United States
-leading up to the Civil War.</p>
+                <p>When the first Greek insurrections against the Ottoman
+Empire broke out in 1814, their proponents did not aim
+to create the modern notion of a nation-state, but
+rather a revival of the Byzantine Empire. Travelers
+from western Europe had a significant role in
+projecting Hellenic ideals of the ancient past onto
+this movement. These travelers further used the art of
+costume studies and portraiture to isolate Greek and
+Turkish identities into neat taxonomies. The resulting
+works cast them as fundamentally opposed ethnicities
+despite their entangled histories in this diverse
+cultural landscape, which also included Jews,
+Albanians, and Armenian Christians–to name a few. This
+visual imagery circulated to further propel a more
+reductionist philhellenic movement and inspire
+patriotic costumes donned by supporters abroad.</p>
 
             </p>
         </div>
-            <a href="/fi_test/items/bdr227582.html"><img src="/fi_test/objects/thumbs/bdr227582.jpg" alt=""></a>
+            <a href="/fi_test/items/demo_001.html"><img src="/fi_test/objects/small/demo_001_sm.jpg" alt="historic sepia photograph depicting a formal brick and stone building in the College Gothic style"></a>
         
-            <a href="/fi_test/items/bdr227583.html"><img src="/fi_test/objects/thumbs/bdr227582.jpg" alt=""></a>
+            <a href="/fi_test/items/foo_003.html"><img src="/fi_test/objects/small/demo_003_sm.jpg" alt="portrait of a thoughtful man in a suit, with the text 'the amazing story of Psychiana' in green letters below"></a>
         
-            <a href="/fi_test/items/bdr227584.html"><img src="/fi_test/objects/thumbs/bdr227582.jpg" alt=""></a>
+            <a href="/fi_test/items/foo_004.html"><img src="https://img.youtube.com/vi/CVXQ3X6Q8oU/hqdefault.jpg" alt="grainy image from historic film depicting fans heading to football game"></a>
+        
+            <a href="/fi_test/items/foo_005.html"><img src="https://www.lib.uidaho.edu/collectionbuilder/demo-objects/small/demo_006_sm.jpg" alt="man standing with pump machinery next to a river with trees and mountains in the distance"></a>
+        
+            <a href="/fi_test/items/foo_015.html"><img src="/fi_test/objects/small/demo_003_sm.jpg" alt="portrait of a thoughtful man in a suit, with the text 'the amazing story of Psychiana' in green letters below"></a>
+        
+            <a href="/fi_test/items/foo_016.html"><img src="https://img.youtube.com/vi/CVXQ3X6Q8oU/hqdefault.jpg" alt="grainy image from historic film depicting fans heading to football game"></a>
+        
+            <a href="/fi_test/items/foo_017.html"><img src="https://www.lib.uidaho.edu/collectionbuilder/demo-objects/small/demo_006_sm.jpg" alt="man standing with pump machinery next to a river with trees and mountains in the distance"></a>
         
         </section>
     </main>

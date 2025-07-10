@@ -80,15 +80,14 @@
 <div class="border"></div>
 </header>
 
-      <main class="item">
-        <section id="itemdescription">
-                    <nav class="leftnav">
+      <main>
+                <nav class="leftnav">
             <ul class="sticky">
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--greekcolor))">Greek War of Independence</div>
+                    <div style="background-color:rgb(var(--greekcolor))" tabindex=0>Greek War of Independence</div>
                     <ul style="background-color:rgb(var(--greekcolor))">
                         
                         
@@ -104,10 +103,10 @@
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--algeriancolor))">Algerian Revolution</div>
+                    <div style="background-color:rgb(var(--algeriancolor))" tabindex=0>Algerian Revolution</div>
                     <ul style="background-color:rgb(var(--algeriancolor))">
                         
                         
@@ -128,10 +127,10 @@
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--indiancolor))">Indian Rebellion of 1857</div>
+                    <div style="background-color:rgb(var(--indiancolor))" tabindex=0>Indian Rebellion of 1857</div>
                     <ul style="background-color:rgb(var(--indiancolor))">
                         
                         
@@ -149,15 +148,31 @@
                 
             </ul>
         </nav>
+        <script>
+            navheaders = document.querySelectorAll(".leftnav>ul>li>div")
+            for (var i=0;i<navheaders.length;i++) {
+              navheaders[i].addEventListener("click", e => {
+                  lmnt = e.target;
+                  navsections = lmnt.parentElement.parentElement.children;
+                  for (var i=0;i<navsections.length;i++) {
+                    navsections[i].classList.remove("open");
+                  }
+                  lmnt.parentElement.classList.add("open");
+              });
+            }
+        </script>
 
+        <section id="item">
+            <a href="#zoom" class="imgwrapper">
+                <img src="/fi_test/objects/small/demo_003_sm.jpg" alt="portrait of a thoughtful man in a suit, with the text &#39;the amazing story of Psychiana&#39; in green letters below" class="img-fluid">
+            </a>
             <h2>Good News – Power (radio episode)</h2>
             <p>
                 Example locally hosted audio item. Psychiana radio program episode begins with assurance that there is a Power that can get people what they desire. Robinson then discusses his early life failures and childhood seeking of some force that could turn his failures into success. He asserts the God-Power can turn our failures into success and bring us material and spiritual abundance.
             </p>
+            <div id="zoom" class="modal">
+                <img src="/fi_test/objects/small/demo_003_sm.jpg" alt="portrait of a thoughtful man in a suit, with the text &#39;the amazing story of Psychiana&#39; in green letters below" />
         </section>
-        <div class="imgwrapper">
-            <img src="/fi_test/objects/small/demo_003_sm.jpg" alt="portrait of a thoughtful man in a suit, with the text &#39;the amazing story of Psychiana&#39; in green letters below" class="img-fluid">
-        </div>
     </main>
 
     <footer>

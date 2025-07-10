@@ -80,14 +80,13 @@
 <div class="border"></div>
 </header>
 
-      <main class="case">
-            <nav class="leftnav">
+      <main>        <nav class="leftnav">
             <ul class="sticky">
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--greekcolor))">Greek War of Independence</div>
+                    <div style="background-color:rgb(var(--greekcolor))" tabindex=0>Greek War of Independence</div>
                     <ul style="background-color:rgb(var(--greekcolor))">
                         
                         
@@ -103,14 +102,14 @@
                     </ul>
                 </li>
                 
-                <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--algeriancolor))">Algerian Revolution</div>
+                
+                
+                <li class="open">
+                    <div style="background-color:rgb(var(--algeriancolor))" tabindex=0>Algerian Revolution</div>
                     <ul style="background-color:rgb(var(--algeriancolor))">
                         
                         
-                        <li style="background-color:rgb(var(--algeriancolor))">
+                        <li style="background-color:rgb(var(--dkalgeriancolor))">
                             <a href="/fi_test/algeria/costumes-and-customs/" class="active">Costumes and Customs Documented Through Barbary Captivity and Trade Accounts</a>
                         </li>
                         
@@ -127,10 +126,10 @@
                     </ul>
                 </li>
                 
+                
+                
                 <li>
-                    
-                    
-                    <div style="background-color:rgb(var(--indiancolor))">Indian Rebellion of 1857</div>
+                    <div style="background-color:rgb(var(--indiancolor))" tabindex=0>Indian Rebellion of 1857</div>
                     <ul style="background-color:rgb(var(--indiancolor))">
                         
                         
@@ -148,9 +147,21 @@
                 
             </ul>
         </nav>
-
-    <section>
-        <h2>Costumes and Customs Documented Through Barbary Captivity and Trade Accounts</h2>
+        <script>
+            navheaders = document.querySelectorAll(".leftnav>ul>li>div")
+            for (var i=0;i<navheaders.length;i++) {
+              navheaders[i].addEventListener("click", e => {
+                  lmnt = e.target;
+                  navsections = lmnt.parentElement.parentElement.children;
+                  for (var i=0;i<navsections.length;i++) {
+                    navsections[i].classList.remove("open");
+                  }
+                  lmnt.parentElement.classList.add("open");
+              });
+            }
+        </script>
+<section id="case" style="background-color:rgb(var(--dkalgeriancolor));">
+        <h2 style="background-color:rgb(var(--dkalgeriancolor));">Costumes and Customs Documented Through Barbary Captivity and Trade Accounts</h2>
         <div id="casedescription">
             <p>
                 <p>The visual histories of Algeria leading up to the

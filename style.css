@@ -11,12 +11,6 @@ body {
     --accentcolor:#efcb86;
     --headerfonts:Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
     --archcolor:black;
-    --greekcolor:66, 83, 113;
-    --dkgreekcolor:32, 44, 65;
-    --algeriancolor:135, 133, 129;
-    --dkalgeriancolor:73,67,55;
-    --indiancolor:125, 50, 35;
-    --dkindiancolor:69, 34, 20;
     --darkerblue:#072441;
     --lighterseablue:#287ab1;
     --red:#d12229;
@@ -189,39 +183,9 @@ main.home>nav {
         display:flex;
         flex-direction:column;
         justify-content:flex-end;
-        &:nth-child(1) {
-            &>span {
-                --transparentcolor:rgba(var(--greekcolor),0.7);
-                background:var(--transparentcolor);
-            }
-            &>.archbox {
-                mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20999%22%3E%3Cpath%20d%3D%22%20%20%20%20%20%20M-50%20-50%20%20%20%20%20%20H250%20%20%20%20%20%20V2000%20%20%20%20%20%20H190%20%20%20%20%20%20V100%20%20%20%20%20%20q0%20-90%20-90%20-90%20%20%20%20%20%20t-90%2090%20%20%20%20%20%20V2000%20%20%20%20%20%20H-50%20%20%20%20%20%20z%22%2F%3E%3C%2Fsvg%3E");
-                --archmask:var(--archcolor);
-                -webkit-background:var(--archmask);
-                background:var(--archmask);
-            }
-        }
-        &:nth-child(2) {
-            &>span {
-                background:rgba(var(--algeriancolor),0.7);
-            }
-            &>.archbox {
-                --archmask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%221000%22%20viewBox%3D%220%200%20200%201000%22%3E%3Cpath%20d%3D%22%20%20M-50%20-50%20%20h400%20%20v1500%20%20H190%20%20V104%20%20l-5%20-5%20%20q30%20-60%20-85%20-90%20%20q-110%2020%20-85%2090%20%20l-5%205%20%20V1500%20%20H-200%20%20z%22%2F%3E%3C%2Fsvg%3E");
-                -webkit-mask-image:var(--archmask);
-                mask-image:var(--archmask);
-                background:var(--archcolor);
-            }
-        }
-        &:nth-child(3) {
-            &>span {
-                background:rgba(var(--indiancolor),0.7);
-            }
-            &>.archbox {
-                --arch-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%221000%22%20viewBox%3D%220%200%20200%201000%22%3E%3Cpath%20d%3D%22%20%20M-50%20-50%20%20h400%20%20v1500%20%20H190%20%20V94%20%20q0%20-65%20-90%20-85%20%20q-90%2015%20-90%2085%20%20v1500%20%20h-100%20%20z%22%2F%3E%3C%2Fsvg%3E");
-                -webkit-mask-image:var(--arch-mask);
-                mask-image:var(--arch-mask);
-                background:var(--archcolor);
-            }
+        &>.archbox {
+            -webkit-mask-image:var(--arch-mask);
+            mask-image:var(--arch-mask);
         }
         & img {
             position: absolute;
@@ -311,15 +275,6 @@ main.home>nav {
             text-wrap: balance;
             padding: 1em;
             text-transform: uppercase;
-            &:nth-child(1) {
-                background:rgb(var(--greekcolor));
-            }
-            &:nth-child(2) {
-                background:rgb(var(--algeriancolor));
-            }
-            &:nth-child(3) {
-                background:rgb(var(--indiancolor));
-            }
             &:focus-visible:after {
                 content:"";
                 border:1px solid orange;
@@ -430,6 +385,7 @@ section#item {
             }
             & li {
                 padding-inline-start:1.5em
+                position: relative;
             }
             & div {
                 padding-block: 1em;
@@ -472,6 +428,7 @@ section#item {
     }
     & li li:has(a.active) {
         background-color: var(--activelinkbgcolor);
+        position:relative;
         /*border-right:-1px solid black;
         border-top: var(--navborder);
         border-bottom: var(--navborder);
@@ -479,6 +436,12 @@ section#item {
         & a.active {
             text-decoration: none;
             color: var(--activelinkcolor);
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            border-inline-start: 5px solid var(--accentcolor);
+            inset: 0;
         }
     }
 }

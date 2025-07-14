@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-    <title>Fashioning Insurrection</title><link rel="stylesheet" href="../style.css" media="all">
+    <title>Fashioning Insurrection</title><link rel="stylesheet" href="../../../style.css" media="all">
 </head>
 <body>
 <header>
     <div class="topnavbar">
         <h1>
-            <a href="../">Fashioning Insurrection</a>
+            <a href="../../../">Fashioning Insurrection</a>
         </h1>
         <section id="about">
             <div class="modal">
-                <img src="../img/supernaturalindianwarrior.jpg" alt="an archer dressed in Indian costume fighting British soldiers in red coats."/>
+                <img src="../../../img/supernaturalindianwarrior.jpg" alt="an archer dressed in Indian costume fighting British soldiers in red coats."/>
                 <div class="text">
                     <h2>About the exhibit</h2>
                     <p>
@@ -58,7 +58,7 @@
         </section>
         <section id="americans">
             <div class="modal">
-                <img src="../img/supernaturalindianwarrior.jpg" alt="an archer dressed in Indian costume fighting British soldiers in red coats."/>
+                <img src="../../../img/supernaturalindianwarrior.jpg" alt="an archer dressed in Indian costume fighting British soldiers in red coats."/>
                 <div class="text">
                     <h2>America's Perspective</h2>
                     <p>
@@ -79,47 +79,107 @@
 <div class="border"></div>
 </header>
 
-  <div class="container my-4">
-  <h2 id="browse-locations">Browse Locations</h2>
+      <main>
+        <nav class="leftnav">
+            <ul class="sticky">
+                
+                
+                
+                
+                <li>
+                    <div style="background-color: #425371" tabindex=0>Greek War of Independence</div>
+                    <ul style="background-color: #425371">
+                        
+                        
+                        <li>
+                            <a href="../../../greece/characters-and-costumes/">Navigating Characters and Costumes of the Greek War of Independence</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="../../../greece/philhellenism/">Philhellenism: Americans in Support of the Greek Revolution and in Greek Costume</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="open">
+                    <div style="background-color: #878581" tabindex=0>Early Algerian Resistance</div>
+                    <ul style="background-color: #878581">
+                        
+                        
+                        <li>
+                            <a href="../../../algeria/costumes-and-customs/">Costumes and Customs Documented Through Barbary Captivity and Trade Accounts</a>
+                        </li>
+                        
+                        
+                        <li style="background-color:#494337;">
+                            <a href="../../../algeria/aftermath-and-adaptation/" class="active">Aftermath and Adaptation: Abd el-Kader to the Zouaves and Turcos in Popular Print</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="../../../algeria/orientalist-legacies/">Orientalist Legacies of Algeria in the American Civil War</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li>
+                    <div style="background-color: #7d3223" tabindex=0>Indian Uprising</div>
+                    <ul style="background-color: #7d3223">
+                        
+                        
+                        <li>
+                            <a href="../../../india/resisting-the-spread-of-the-british-east-india-company/">Resisting the Spread of the British East India Company across the Subcontinent</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="../../../india/press-and-popular-sentiment/">1857 Uprising in Press and Popular Sentiment</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+        <script>
+            navheaders = document.querySelectorAll(".leftnav>ul>li>div")
+            for (var i=0;i<navheaders.length;i++) {
+              navheaders[i].addEventListener("click", e => {
+                  lmnt = e.target;
+                  navsections = lmnt.parentElement.parentElement.children;
+                  for (var i=0;i<navsections.length;i++) {
+                    navsections[i].classList.remove("open");
+                  }
+                  lmnt.parentElement.classList.add("open");
+              });
+            }
+        </script>
 
-<p>Use this word cloud visualization to browse locations.
-Word size is determined by frequency and all words link to a corresponding collection search.</p>
-
-<div id="cloud-div-location" class="text-center my-4 bg-light border rounded p-2"></div>
-<script>
-(function(){    
-    /* subject terms + count */
-    var terms = [
         
-    ];
+        <section id="item" style="background-color:#494337">
+            <a href="#zoom" class="imgwrapper">
+                <img src="../../../objects/small/demo_004_sm.jpg" alt="grainy image from historic film depicting fans heading to football game" class="img-fluid">
+            </a>
+            <h2>University of Idaho vs. University of Southern California (Football), 10/30/1925</h2>
+            <p>
+                Example YouTube video item. Idaho Football vs. University of Southern California 10/30/1925 at Neale Stadium in Moscow, ID. Score: 7 - 51 (L).
+            </p>
+            <div id="zoom" class="modal">
+                <img src="../../../objects/small/demo_004_sm.jpg" alt="grainy image from historic film depicting fans heading to football game" />
+        </section>
+    </main>
 
-    
-    /* calculate max size */
-    var counts = terms.map(function(obj){ return obj[1]; });
-    var countMax = counts.reduce(function(a, b) { return Math.max(a, b); });
-    var cloud = document.getElementById("cloud-div-location");
-    
-
-    function mapSize(x) { return Math.round(x * 9 / countMax + 1); }
-    /* create cloud */
-    function makeGrid(array) {
-        var i, size;
-        var items = "";
-        
-        for (let i = 0; i < array.length; i++) {
-            size = mapSize(array[i][1]);
-            items += '<a class="btn btn-outline-primary m-2 tagcloud' + size + '" href="/fi_test/browse.html#' + array[i][2] + ':' + encodeURIComponent(array[i][0]) + '" >' + array[i][0] + '</a>';
-        }
-        cloud.innerHTML = items;
-    }
-    makeGrid(terms);
-
-})();
-</script>
-
-</div>
     <footer>
-        <a id="american" href="#americans"><img src="../img/americanvoyeur.gif"/></a>
+        <a id="american" href="#americans"><img src="../../../img/americanvoyeur.gif"/></a>
         <p>copyright 2025 testing testers llc</p>
     </footer>
 </body>
